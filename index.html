@@ -39,6 +39,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Natural White Loban – Laxmi Products</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q84NWJYFR8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q84NWJYFR8');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -128,6 +136,14 @@
     .ts-wa{background:#25d366;}
     .ts-ph{background:linear-gradient(135deg,var(--gold-dark),var(--gold));}
 
+    
+    
+    
+    
+    
+    
+    
+
     /* ══════════════════════════════════════
        NAV
     ══════════════════════════════════════ */
@@ -165,7 +181,7 @@
     }
     .nav-links a:hover{color:var(--gold);}
     .nav-links a:hover::after{transform:scaleX(1);}
-    .hamburger{display:none !important;}
+    
 
     /* ══════════════════════════════════════
        HERO
@@ -736,11 +752,34 @@
     }
 
     /* ══ LIGHT MODE overrides for product section ══ */
-    body.light-mode .pd-card{background:rgba(255,255,255,.75);border-color:rgba(201,168,76,.3);}
-    body.light-mode .pd-card-desc{color:#4a2c0a;}
-    body.light-mode .pd-highlights{background:rgba(255,255,255,.7);border-color:rgba(201,168,76,.25);}
-    body.light-mode .pd-hl-item span{color:#3a2010;}
-    body.light-mode
+    body.light-mode .pd-card{
+      background:rgba(255,248,237,.82);
+      border-color:rgba(139,105,20,.28);
+      box-shadow:0 8px 24px rgba(76,44,18,.08);
+    }
+    body.light-mode .pd-card:hover{
+      background:rgba(255,242,221,.92);
+      border-color:rgba(139,105,20,.42);
+    }
+    body.light-mode .pd-card-title{color:#7a4f2d;}
+    body.light-mode .pd-card-desc{color:#4f2f12;}
+    body.light-mode .pd-card-note{color:rgba(78,48,18,.7);}
+    body.light-mode .pd-card-desc strong{color:#2d1807;}
+    body.light-mode .pd-highlights{
+      background:rgba(255,248,237,.82);
+      border-color:rgba(139,105,20,.28);
+      box-shadow:0 8px 24px rgba(76,44,18,.08);
+    }
+    body.light-mode .pd-hl-item span{color:#3f2811;}
+    body.light-mode .pd-card-highlight{
+      background:linear-gradient(135deg,rgba(255,240,212,.95),rgba(248,232,192,.9)) !important;
+      border-color:rgba(139,105,20,.44) !important;
+      box-shadow:0 10px 28px rgba(88,54,24,.16);
+    }
+    body.light-mode .pd-card-highlight .pd-card-title{color:#7a4f2d !important;}
+    body.light-mode .pd-card-highlight .pd-card-desc,
+    body.light-mode .pd-card-highlight .pd-card-note{color:#5a3a1c;}
+    body.light-mode .pd-card-highlight .pd-card-desc strong{color:#2d1807;}
 
     @media(max-width:900px){
       .pd-grid{grid-template-columns:1fr;}
@@ -748,7 +787,13 @@
 
     /* ══ LIGHT / DARK MODE ══ */
     body.light-mode #site-bg::after{
-      background:linear-gradient(160deg,rgba(253,246,236,.88) 0%,rgba(240,225,195,.82) 40%,rgba(253,246,236,.92) 100%);
+      background:linear-gradient(
+        160deg,
+        rgba(8,4,1,.78) 0%,
+        rgba(28,16,6,.72) 40%,
+        rgba(4,2,1,.86) 100%
+      );
+      box-shadow:inset 0 0 140px rgba(0,0,0,.38);
     }
     body.light-mode #wrap{ color:#1a0f00; }
     body.light-mode nav{ background:rgba(253,246,236,.97); }
@@ -757,8 +802,8 @@
     body.light-mode .nav-links a{ color:#5a3a1a; }
     body.light-mode .hero h1{ color:#1a0f00; }
     body.light-mode .hero-sub{ color:#4a2c0a; }
-    body.light-mode .pd-card-title{ color:#6b3a10; }
-    body.light-mode .pd-card-desc strong{ color:#1a0f00; }
+    body.light-mode .pd-card-title{ color:#7a4f2d !important; }
+    body.light-mode .pd-card-desc strong{ color:#2d1807 !important; }
     body.light-mode .pd-card-icon{ filter:none; }
     body.light-mode .cc-val,
     body.light-mode .cc-val a{ color:#1a0f00 !important; }
@@ -865,11 +910,12 @@
 
     /* Highlight card — Finest Oxidation Bubbles */
     .pd-card-highlight{
-      border-color:rgba(201,168,76,.45) !important;
-      background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.04)) !important;
+      border-color:rgba(201,168,76,.18) !important;
+      background:rgba(255,255,255,.05) !important;
+      box-shadow:none;
     }
     .pd-card-highlight .pd-card-title{
-      color:var(--gold) !important;
+      color:var(--gold-light) !important;
     }
 
     /* Highlights list with icons */
@@ -908,20 +954,17 @@
     body.light-mode .pd-hl-text span{ color:#4a2c0a; }
 
     @media(max-width:768px){
-      #top-socials{ top:78px; right:10px; gap:7px; }
+      #top-socials{ top:16px; right:12px; gap:8px; align-items:flex-end; }
       .ts-btn{ width:46px !important; height:46px !important; font-size:1.3rem !important; }
-      #theme-btn svg { width:20px !important; height:20px !important; }
-    }
-    @media(max-width:480px){
-      #top-socials{ top:72px; right:8px; gap:6px; }
-      .ts-btn{ width:42px !important; height:42px !important; font-size:1.2rem !important; }
+      #top-socials .ts-btn:not(#theme-btn){ display:none !important; }
+      #theme-btn{ display:flex !important; }
     }
 
     /* ══ PRODUCT LOGOS STRIP ══ */
     .pd-logos-strip{
       max-width:1100px;
-      margin:40px auto 0;
-      padding:0 5%;
+      margin:56px auto 0;
+      padding:18px 5% 0;
     }
     .pd-logos-inner{
       display:flex;
@@ -986,6 +1029,7 @@
     body.light-mode .pd-logo-loc{color:#888;}
 
     @media(max-width:768px){
+      .pd-logos-strip{margin-top:36px;padding-top:8px;}
       .pd-logos-inner{gap:16px;}
       .pd-logo-card{min-width:calc(50% - 12px);}
     }
@@ -993,16 +1037,14 @@
       .pd-logo-card{min-width:100%;}
     }
 
+    /* ══ MOBILE TOP-RIGHT: only theme button, hide social icons ══ */
     @media(max-width:768px){
-      /* Hide all social icons on mobile — only show dark/light toggle */
       #top-socials .ts-btn:not(#theme-btn){ display:none !important; }
-      /* Position theme button nicely on mobile */
-      #top-socials{ top:14px; right:14px; gap:0; }
-      #theme-btn{ width:44px !important; height:44px !important; }
+      #top-socials{ top:14px; right:12px; gap:0; }
+      #theme-btn{ width:46px !important; height:46px !important; display:flex !important; }
     }
     @media(max-width:480px){
-      #top-socials{ top:12px; right:12px; }
-      #theme-btn{ width:40px !important; height:40px !important; }
+      #theme-btn{ width:42px !important; height:42px !important; }
     }
   </style>
 </head>
@@ -1046,10 +1088,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1c-9.39 0-17-7.61-17-17a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
   </a>
   <!-- Dark / Light mode toggle button -->
-  <button onclick="toggleDark()" id="theme-btn" class="ts-btn" title="Toggle Dark/Light Mode" style="background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);cursor:pointer;">
-    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="white" stroke-width="2"/><line x1="12" y1="21" x2="12" y2="23" stroke="white" stroke-width="2"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="white" stroke-width="2"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="white" stroke-width="2"/><line x1="1" y1="12" x2="3" y2="12" stroke="white" stroke-width="2"/><line x1="21" y1="12" x2="23" y2="12" stroke="white" stroke-width="2"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="white" stroke-width="2"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="white" stroke-width="2"/></svg>
+  <button type="button" onclick="toggleDark()" id="theme-btn" class="ts-btn" title="Toggle Dark/Light Mode" style="background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);cursor:pointer;">
+    <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="white" stroke-width="2"/><line x1="12" y1="21" x2="12" y2="23" stroke="white" stroke-width="2"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="white" stroke-width="2"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="white" stroke-width="2"/><line x1="1" y1="12" x2="3" y2="12" stroke="white" stroke-width="2"/><line x1="21" y1="12" x2="23" y2="12" stroke="white" stroke-width="2"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="white" stroke-width="2"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="white" stroke-width="2"/></svg>
   </button>
+
 </div>
 
 <!-- NAV -->
@@ -1201,7 +1244,7 @@
     <div class="pd-right">
       <div class="pd-specs">
 
-        <div class="pd-card pd-card-highlight">
+        <div class="pd-card">
           <div class="pd-card-icon">✨</div>
           <div class="pd-card-body">
             <div class="pd-card-title">Finest Oxidation Bubbles</div>
@@ -1256,7 +1299,7 @@
           </div>
         </div>
 
-        <div class="pd-card pd-card-highlight">
+        <div class="pd-card">
           <div class="pd-card-icon">💡</div>
           <div class="pd-card-body">
             <div class="pd-card-title">An Innovative Product by Prisha Formulations</div>
@@ -1616,20 +1659,46 @@
     }
   });
 
+  function updateThemeIcons(){
+    const isLight = document.body.classList.contains('light-mode');
+    document.querySelectorAll('.theme-icon-moon').forEach(function(el){ el.style.display = isLight ? 'none' : 'block'; });
+    document.querySelectorAll('.theme-icon-sun').forEach(function(el){ el.style.display = isLight ? 'block' : 'none'; });
+  }
+
+  
+
+  
+
+  function updateMobileControls(){
+    const themeBtn = document.getElementById('theme-btn');
+    const menuBtn = document.getElementById('mobile-menu-toggle');
+    const isMobile = window.innerWidth <= 768;
+    if(themeBtn){ themeBtn.style.display = isMobile ? 'none' : 'flex'; }
+    if(menuBtn){ menuBtn.style.display = isMobile ? 'flex' : 'none'; }
+    if(!isMobile){ closeMobileMenu(); }
+  }
+
   // Dark / Light mode toggle
   function toggleDark(){
     document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    document.getElementById('theme-icon-moon').style.display = isLight ? 'none' : 'block';
-    document.getElementById('theme-icon-sun').style.display  = isLight ? 'block' : 'none';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    updateThemeIcons();
+    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
   }
   // Restore saved theme
   if(localStorage.getItem('theme') === 'light'){
     document.body.classList.add('light-mode');
-    document.getElementById('theme-icon-moon').style.display = 'none';
-    document.getElementById('theme-icon-sun').style.display = 'block';
   }
+  updateThemeIcons();
+  updateMobileControls();
+
+  window.addEventListener('resize', updateMobileControls);
+
+  document.addEventListener('click', function(e){
+    const topSocials = document.getElementById('top-socials');
+    if(window.innerWidth <= 768 && topSocials && !topSocials.contains(e.target)){
+      closeMobileMenu();
+    }
+  });
 
   // Active nav link on scroll
   const navAs = document.querySelectorAll('.nav-links a');
