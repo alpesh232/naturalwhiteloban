@@ -726,6 +726,12 @@
       color:rgba(253,248,240,.9);
     }
     .pd-card-desc strong{color:var(--cream);font-weight:600;}
+    .pd-card-desc::selection,
+    .pd-card-desc strong::selection,
+    .pd-card-note::selection{
+      background: transparent;
+      color: inherit;
+    }
 
     .pd-right{display:flex;flex-direction:column;gap:24px;justify-content:space-between;height:100%;}
     .pd-company-row
