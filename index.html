@@ -1111,15 +1111,22 @@
       position:relative;z-index:2;
       width:100%;
       max-width:100vw;
-      height:600px;
+      height:680px;
       overflow:hidden;
-      perspective:1400px;
+      perspective:1600px;
       display:flex;align-items:center;justify-content:center;
       cursor:grab;
       touch-action:pan-y;
       user-select:none;
       -webkit-user-select:none;
       box-sizing:border-box;
+      opacity:0;
+      transform:translateY(46px) scale(.96);
+    }
+    .carousel-stage.cf-visible{
+      opacity:1;
+      transform:translateY(0) scale(1);
+      transition:opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1);
     }
     .carousel-stage.grabbing{cursor:grabbing;}
     .carousel-stage::before,
@@ -1146,19 +1153,22 @@
     .carousel-slide{
       position:absolute;
       top:50%;left:50%;
-      width:460px;
-      height:560px;
+      width:540px;
+      height:650px;
       border-radius:18px;
       overflow:hidden;
       box-shadow:0 20px 60px rgba(0,0,0,.7);
       border:1px solid rgba(201,168,76,.18);
-      transition:transform .5s cubic-bezier(.25,.46,.45,.94),
-                 opacity .5s ease,
+      transition:transform .6s cubic-bezier(.22,1,.36,1),
+                 opacity .6s ease,
                  box-shadow .5s ease,
                  border-color .5s ease;
       pointer-events:auto;
       will-change:transform;
       cursor:pointer;
+    }
+    .carousel-slide.no-anim{
+      transition:none !important;
     }
     .carousel-slide.is-front{
       border-color:rgba(201,168,76,.65);
@@ -1236,18 +1246,18 @@
     .carousel-badge::after{content:'✦';font-size:.6rem;}
 
     @media(max-width:1024px){
-      .carousel-stage{height:520px;}
-      .carousel-slide{width:380px;height:460px;}
+      .carousel-stage{height:580px;}
+      .carousel-slide{width:440px;height:530px;}
     }
     @media(max-width:768px){
-      .carousel-stage{height:460px;}
-      .carousel-slide{width:310px;height:400px;}
+      .carousel-stage{height:480px;}
+      .carousel-slide{width:340px;height:430px;}
       .slide-caption{padding:20px 16px 16px;}
       .slide-caption-text{font-size:.98rem;}
     }
     @media(max-width:480px){
       .carousel-stage{height:400px;}
-      .carousel-slide{width:250px;height:340px;}
+      .carousel-slide{width:270px;height:355px;}
       .carousel-hint{font-size:.7rem;}
     }
   </style>
@@ -1265,7 +1275,7 @@
   <a href="https://www.facebook.com/share/1AyLcvhjXZ/?mibextid=wwXIfr" target="_blank" rel="noopener" class="ts-btn ts-fb" title="Facebook">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
   </a>
-  <a href="https://wa.me/917083074170" target="_blank" rel="noopener" class="ts-btn ts-wa" title="WhatsApp">
+  <a href="https://whatsapp.com/channel/0029VbDH32q3wtbB2dxpYL1o" target="_blank" rel="noopener" class="ts-btn ts-wa" title="WhatsApp Channel">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
   <a href="https://www.instagram.com/jagpalgajera?igsh=MXE3bDZweXY5NXNmYg%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="ts-btn ts-ig" title="Instagram">
@@ -1653,12 +1663,12 @@
       <div class="sc-name">Facebook</div>
       <div class="sc-handle">jagpal.gajera.735</div>
     </a>
-    <a href="https://wa.me/917083074170" target="_blank" rel="noopener" class="social-card">
+    <a href="https://whatsapp.com/channel/0029VbDH32q3wtbB2dxpYL1o" target="_blank" rel="noopener" class="social-card">
       <div class="sc-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </div>
       <div class="sc-name">WhatsApp</div>
-      <div class="sc-handle">Chat with us</div>
+      <div class="sc-handle">Join Our Channel</div>
     </a>
     <a href="https://www.instagram.com/jagpalgajera?igsh=MXE3bDZweXY5NXNmYg%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="social-card">
       <div class="sc-icon">
@@ -1715,7 +1725,7 @@
           </div>
           <div class="cc-text">
             <span class="cc-label">WhatsApp</span>
-            <span class="cc-val"><a href="https://wa.me/917083074170">+91 70830 74170</a></span>
+            <span class="cc-val"><a href="https://whatsapp.com/channel/0029VbDH32q3wtbB2dxpYL1o">Join Our Channel</a></span>
           </div>
         </div>
 
@@ -1755,6 +1765,12 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
         <div><div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#25d366;margin-bottom:3px;font-weight:700;">WhatsApp</div><div style="font-size:1.05rem;font-weight:600;">+91 70830 74170</div></div>
+      </a>
+      <a href="https://whatsapp.com/channel/0029VbDH32q3wtbB2dxpYL1o" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.3);border-radius:12px;padding:18px 22px;text-decoration:none;color:var(--cream);transition:transform .2s,border-color .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='#25d366'" onmouseout="this.style.transform='';this.style.borderColor='rgba(37,211,102,.3)'">
+        <div style="width:46px;height:46px;border-radius:12px;background:#25d366;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div><div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#25d366;margin-bottom:3px;font-weight:700;">WhatsApp Channel</div><div style="font-size:1.05rem;font-weight:600;">Join Our Channel</div></div>
       </a>
       <a href="mailto:prishaformulation@gmail.com" style="display:flex;align-items:center;gap:16px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:18px 22px;text-decoration:none;color:var(--cream);transition:transform .2s,border-color .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--gold)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(201,168,76,.2)'">
         <div style="width:46px;height:46px;border-radius:12px;background:rgba(201,168,76,.25);border:1px solid rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -1815,11 +1831,11 @@
         </div>
         <span class="pb-label">Instagram</span>
       </a>
-      <a href="https://wa.me/917083074170" target="_blank" rel="noopener" class="popup-btn">
+      <a href="https://whatsapp.com/channel/0029VbDH32q3wtbB2dxpYL1o" target="_blank" rel="noopener" class="popup-btn">
         <div class="pb-icon pb-wa">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
-        <span class="pb-label">WhatsApp</span>
+        <span class="pb-label">Channel</span>
       </a>
       <a href="tel:+919824647542" class="popup-btn">
         <div class="pb-icon pb-ph">
@@ -1875,8 +1891,11 @@
 
   /* ══════════════════════════════════════
      COVERFLOW CAROUSEL LOGIC
-     Drag / swipe / click-to-jump, auto-play,
-     circular wrap, responsive spacing
+     Live drag-follow (cards track the pointer
+     in real time, then ease into place), plus
+     click-to-jump, auto-play, keyboard,
+     circular wrap, responsive spacing, and a
+     scroll-in entrance animation.
   ══════════════════════════════════════ */
   (function(){
     const stage   = document.getElementById('coverflowStage');
@@ -1886,8 +1905,12 @@
 
     const slides = Array.from(ring.querySelectorAll('.carousel-slide'));
     const total  = slides.length;
-    let active   = 0;
-    let autoTimer = null;
+    let active     = 0;
+    let autoTimer  = null;
+    let isDragging = false;
+    let startX     = 0;
+    let moved      = false;
+    let rafId      = null;
 
     // Build nav dots
     slides.forEach((_, i)=>{
@@ -1898,13 +1921,13 @@
       dotsBox.appendChild(dot);
     });
     const dots = Array.from(dotsBox.children);
-//
+
     function spacingFor(){
       const w = window.innerWidth;
-      if(w <= 480)  return {x:145, scale:.66, rot:32, z:190};
-      if(w <= 768)  return {x:185, scale:.68, rot:34, z:235};
-      if(w <= 1024) return {x:230, scale:.7,  rot:35, z:290};
-      return {x:280, scale:.72, rot:35, z:350};
+      if(w <= 480)  return {x:170, scale:.66, rot:32, z:220};
+      if(w <= 768)  return {x:215, scale:.68, rot:34, z:275};
+      if(w <= 1024) return {x:270, scale:.7,  rot:35, z:335};
+      return {x:330, scale:.72, rot:35, z:410};
     }
 
     function shortestOffset(i, from){
@@ -1914,37 +1937,52 @@
       return diff;
     }
 
-    function render(){
+    // Continuous shape for ANY real-valued offset (fractional while dragging)
+    // — interpolates smoothly between the front/side/far keyframes instead
+    // of jumping between fixed states, which is what makes the drag feel fluid.
+    function shapeFor(d, sp){
+      const absD = Math.min(Math.abs(d), 3);
+      const sign = d === 0 ? 0 : (d > 0 ? 1 : -1);
+      const keys = [
+        {x:0,          scale:1,             z:0,        op:1  },
+        {x:sp.x,       scale:sp.scale,      z:sp.z*.5,  op:.85},
+        {x:sp.x*1.55,  scale:sp.scale*.72,  z:sp.z,     op:.45},
+        {x:sp.x*1.8,   scale:sp.scale*.5,   z:sp.z*1.3, op:0  }
+      ];
+      const lo = Math.floor(absD);
+      const hi = Math.min(lo + 1, keys.length - 1);
+      const t  = absD - lo;
+      const lerp = (a,b,t)=> a + (b - a) * t;
+      const k0 = keys[lo], k1 = keys[hi];
+      return {
+        x:     lerp(k0.x, k1.x, t) * sign,
+        scale: lerp(k0.scale, k1.scale, t),
+        z:    -lerp(k0.z, k1.z, t),
+        op:    lerp(k0.op, k1.op, t),
+        rot:   sign * sp.rot * Math.min(absD, 1)
+      };
+    }
+
+    // livePx = live pointer delta while dragging (0 when settled)
+    function render(livePx){
       const sp = spacingFor();
+      const f  = livePx ? Math.max(-1, Math.min(1, -livePx / sp.x)) : 0;
+
       slides.forEach((slide, i)=>{
-        const offset = shortestOffset(i, active);
-        const abs = Math.abs(offset);
-        let transform, opacity, zIndex;
+        const base  = shortestOffset(i, active);
+        const off   = base - f;
+        const shape = shapeFor(off, sp);
 
-        if(abs === 0){
-          transform = 'translate(-50%,-50%) translateZ(0) scale(1) rotateY(0deg)';
-          opacity = 1; zIndex = 5;
-        } else if(abs === 1){
-          transform = `translate(-50%,-50%) translateX(${offset*sp.x}px) translateZ(-${sp.z*0.5}px) scale(${sp.scale}) rotateY(${-offset*sp.rot}deg)`;
-          opacity = .82; zIndex = 3;
-        } else if(abs === 2){
-          transform = `translate(-50%,-50%) translateX(${offset*sp.x*1.55}px) translateZ(-${sp.z}px) scale(${sp.scale*0.72}) rotateY(${-offset*sp.rot}deg)`;
-          opacity = .42; zIndex = 1;
-        } else {
-          transform = `translate(-50%,-50%) translateX(${offset*sp.x*1.8}px) translateZ(-${sp.z*1.3}px) scale(${sp.scale*0.5}) rotateY(${-offset*sp.rot}deg)`;
-          opacity = 0; zIndex = 0;
-        }
-
-        slide.style.transform = transform;
-        slide.style.opacity = opacity;
-        slide.style.zIndex = zIndex;
-        slide.classList.toggle('is-front', abs === 0);
+        slide.style.transform = `translate(-50%,-50%) translateX(${shape.x}px) translateZ(${shape.z}px) scale(${shape.scale}) rotateY(${shape.rot}deg)`;
+        slide.style.opacity   = shape.op;
+        slide.style.zIndex    = Math.round((4 - Math.min(Math.abs(off), 4)) * 100);
+        slide.classList.toggle('is-front', Math.abs(off) < 0.5);
       });
 
       dots.forEach((d,i)=>{
         const isActive = i === active;
         d.style.background = isActive ? 'var(--gold)' : 'rgba(201,168,76,.25)';
-        d.style.transform = isActive ? 'scale(1.3)' : 'scale(1)';
+        d.style.transform  = isActive ? 'scale(1.3)' : 'scale(1)';
       });
     }
 
@@ -1955,35 +1993,48 @@
     function next(){ goTo(active + 1); }
     function prev(){ goTo(active - 1); }
 
-    // click a side slide to bring it forward
+    // click a side slide to bring it forward (ignored if it was really a drag)
     slides.forEach((slide, i)=>{
       slide.addEventListener('click', ()=>{
-        if(i !== active){ goTo(i); restartAuto(); }
+        if(i !== active && !moved){ goTo(i); restartAuto(); }
       });
     });
 
-    // Drag / swipe (pointer events unify mouse + touch)
-    let dragging = false, startX = 0, moved = false;
+    // ── Live drag / swipe — deck tracks the pointer 1:1, eases into place on release ──
+    function setDragging(on){
+      isDragging = on;
+      slides.forEach(s => s.classList.toggle('no-anim', on));
+      stage.classList.toggle('grabbing', on);
+    }
+
     stage.addEventListener('pointerdown', (e)=>{
-      dragging = true; moved = false; startX = e.clientX;
-      stage.classList.add('grabbing');
+      startX = e.clientX; moved = false;
+      setDragging(true);
       stopAuto();
+      if(stage.setPointerCapture){ try{ stage.setPointerCapture(e.pointerId); }catch(err){} }
     });
-    window.addEventListener('pointermove', (e)=>{
-      if(!dragging) return;
+
+    stage.addEventListener('pointermove', (e)=>{
+      if(!isDragging) return;
       const dx = e.clientX - startX;
-      if(Math.abs(dx) > 8) moved = true;
+      if(Math.abs(dx) > 6) moved = true;
+      if(rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(()=> render(dx));
     });
-    window.addEventListener('pointerup', (e)=>{
-      if(!dragging) return;
-      dragging = false;
-      stage.classList.remove('grabbing');
-      const dx = e.clientX - startX;
-      const THRESHOLD = 55;
+
+    function endDrag(e){
+      if(!isDragging) return;
+      setDragging(false);
+      const dx = (e && e.clientX != null ? e.clientX : startX) - startX;
+      const THRESHOLD = 50;
       if(dx > THRESHOLD) prev();
       else if(dx < -THRESHOLD) next();
+      else render(0);
       restartAuto();
-    });
+    }
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+
     // prevent image ghost-drag
     ring.querySelectorAll('img').forEach(img=> img.setAttribute('draggable','false'));
 
@@ -1999,11 +2050,26 @@
     function stopAuto(){ if(autoTimer) clearInterval(autoTimer); }
     function restartAuto(){ stopAuto(); startAuto(); }
     stage.addEventListener('mouseenter', stopAuto);
-    stage.addEventListener('mouseleave', startAuto);
+    stage.addEventListener('mouseleave', ()=>{ if(!isDragging) startAuto(); });
 
-    window.addEventListener('resize', render);
+    window.addEventListener('resize', ()=> render(0));
 
-    render();
+    // Gentle fade + rise entrance animation once the carousel scrolls into view
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            stage.classList.add('cf-visible');
+            io.disconnect();
+          }
+        });
+      }, {threshold:.2});
+      io.observe(stage);
+    } else {
+      stage.classList.add('cf-visible');
+    }
+
+    render(0);
     startAuto();
   })();
 </script>
